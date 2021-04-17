@@ -24,21 +24,25 @@ export const GifGrid = ({category}) => {
                 url: img.images?.downsized_medium.url,
             }
         })
+        console.log(gifs)
         setImages(gifs)
 
     }
 
     getGifs()
     return (
-        <div>
+        <>
             <h3> {category} </h3>
-            <ol>
-                {images.map(img =>
-                    <GifGridItem img={img}
-                        {...img}
-                    />
-                )}
-            </ol>
-        </div>
+            <div className="card-grid">
+                <ol>
+                    {images.map(img =>
+                        <GifGridItem
+                            key={img.id}
+                            {...img}
+                        />
+                    )}
+                </ol>
+            </div>
+        </>
     )
 }
