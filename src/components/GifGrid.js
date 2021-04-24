@@ -1,8 +1,5 @@
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifGridItem } from "./GifGridItem";
-// import { getGifs } from "../helpers/getGifs";
-
-require("dotenv").config();
 
 export const GifGrid = ({ category }) => {
     const { data: images, loading } = useFetchGifs(category);
